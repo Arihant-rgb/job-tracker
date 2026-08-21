@@ -11,7 +11,7 @@
 - [ ] Filter jobs by status via query string
 - [ ] Basic validation on form
 
-## Later (REST+SQL)
+## Later (REST/SQL)
 - [ ] Refactor routes to proper REST conventions
 - [ ] Add /api/jobs route returning JSON
 - [ ] Swap data.json for real database
