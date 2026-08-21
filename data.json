@@ -1,0 +1,16 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "company": "Google",
+      "role": "SDE Intern",
+      "status": "applied"
+    },
+    {
+      "id": 2,
+      "company": "Amazon",
+      "role": "Backend Intern",
+      "status": "interview"
+    }
+  ]
+}
