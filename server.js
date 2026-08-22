@@ -13,6 +13,23 @@ app.get('/',(req,res)=>{
     res.render('index',{jobs: data.jobs});
 })
 
+app.post('/jobs',(req,res)=>{
+    const data= JSON.parse(fs.readFileSync('./data.json','utf-8'));
+
+    const newJob = {
+        id: Date.now(),
+        company: req.body.company,
+        role: req.body.role,
+        status: req.body.status
+    };
+
+    data.jobs.push(newJob);
+
+    fs.writeFileSync('./data.json',JSON.stringify(data,null,2));
+
+    res.redirect('/');
+});
+
 app.listen(PORT, ()=>{
     console.log(`running server on https://localhost:${PORT}`);
 })

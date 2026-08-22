@@ -16,6 +16,23 @@
             </li>
         <% } %>
     </ul>
+
+    <!--New Job Form-->
+    <form method="post" action="/jobs">
+
+        <input type="text" name="company" placeholder="Company" required>
+
+        <input type="text" name="role" placeholder="Role" required>
+
+        <select name="status">
+            <option value="applied">Applied</option>
+            <option value="interview">Interview</option>
+            <option value="rejected">Rejected</option>
+        </select>
+
+        <button type="submit">Add Job</button>
+        
+    </form>
     
 </body>
 </html>

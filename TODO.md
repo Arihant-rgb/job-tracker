@@ -5,7 +5,7 @@
 - [x] Static CSS
 
 ## Next
-- [ ] Add form to submit new job (POST route)
+- [x] Add form to submit new job (POST route)
 - [ ] Add delete button per job
 - [ ] Add edit page
 - [ ] Filter jobs by status via query string
