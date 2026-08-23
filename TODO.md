@@ -6,7 +6,7 @@
 
 ## Next
 - [x] Add form to submit new job (POST route)
-- [ ] Add delete button per job
+- [x] Add delete button per job
 - [ ] Add edit page
 - [ ] Filter jobs by status via query string
 - [ ] Basic validation on form
