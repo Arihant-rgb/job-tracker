@@ -13,6 +13,9 @@
         <% for(let job of jobs){ %>
             <li>
                 <%=job.company %> - <%=job.role %> (<%=job.status %>)
+                <form method="post" action="/jobs/<%= job.id%>/delete" style="display: inline;";>
+                    <button type="submit">Delete</button>
+                </form>
             </li>
         <% } %>
     </ul>
