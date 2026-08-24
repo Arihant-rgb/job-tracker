@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Edit Job</h1>
+
+    <form method="post" action="/jobs/<%=job.id%>/update">
+
+        <input type="text" name="company" value="<%=job.company%>" required>
+
+        <input type="text" name="role" value="<%=job.role%>" required>
+
+        <select name="status">
+
+            <option value="applied" <%= job.status=='applied' ? 'selected':''%> > Applied </option>
+
+            <option value="interview" <%= job.status=='interview' ? 'selected':''%> > Interview </option>
+
+            <option value="rejected" <%= job.status=='rejected' ? 'selected':''%> > Rejected </option>
+
+        </select>
+        
+        <button type="submit">Save Changes</button>
+
+    </form>
+
+</body>
+</html>

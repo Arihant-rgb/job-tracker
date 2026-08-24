@@ -44,6 +44,35 @@ app.post("/jobs/:id/delete",(req,res)=>{
     res.redirect('/');
 })
 
+app.get("/jobs/:id/edit",(req,res)=>{
+
+    const data= JSON.parse(fs.readFileSync('./data.json','utf-8'));
+
+    const jobId = Number(req.params.id);
+
+    const job= data.jobs.find(j => j.id== jobId);
+
+    res.render('edit',{job:job});
+
+})
+
+app.post("/jobs/:id/update",(req,res)=>{
+
+    const data= JSON.parse(fs.readFileSync('./data.json','utf-8'));
+
+    const jobId= Number(req.params.id);
+
+    const job= data.jobs.find(j => j.id==jobId);
+
+    job.company= req.body.company;
+    job.role= req.body.role;
+    job.status= req.body.status;
+
+    fs.writeFileSync('./data.json', JSON.stringify(data,null,2));
+
+    res.redirect('/');
+})
+
 app.listen(PORT, ()=>{
     console.log(`running server on https://localhost:${PORT}`);
 })
