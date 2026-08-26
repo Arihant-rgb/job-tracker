@@ -8,7 +8,7 @@
 - [x] Add form to submit new job (POST route)
 - [x] Add delete button per job
 - [x] Add edit page
-- [ ] Filter jobs by status via query string
+- [x] Filter jobs by status via query string
 - [ ] Basic validation on form
 
 ## Later (REST/SQL)

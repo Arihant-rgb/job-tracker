@@ -9,10 +9,6 @@ app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true}));
 
-app.get('/',(req,res)=>{
-    const data= JSON.parse(fs.readFileSync('./data.json','utf-8'));
-    res.render('index',{jobs: data.jobs});
-})
 
 app.post('/jobs',(req,res)=>{
     const data= JSON.parse(fs.readFileSync('./data.json','utf-8'));
@@ -71,6 +67,18 @@ app.post("/jobs/:id/update",(req,res)=>{
     fs.writeFileSync('./data.json', JSON.stringify(data,null,2));
 
     res.redirect('/');
+})
+
+app.get('/',(req,res)=>{
+    const data= JSON.parse(fs.readFileSync("./data.json",'utf-8'));
+
+    let jobs= data.jobs;
+
+    if(req.query.status){
+        jobs= jobs.filter(job=> job.status===req.query.status);
+    }
+
+    res.render('index',{jobs});
 })
 
 app.listen(PORT, ()=>{

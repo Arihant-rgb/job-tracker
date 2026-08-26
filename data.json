@@ -11,6 +11,18 @@
       "company": "Amazon",
       "role": "fullstack dev",
       "status": "applied"
+    },
+    {
+      "id": 1787726194420,
+      "company": "JPmorgan",
+      "role": "fullstack dev",
+      "status": "rejected"
+    },
+    {
+      "id": 1787726210054,
+      "company": "newCompany",
+      "role": "manager",
+      "status": "interview"
     }
   ]
 }

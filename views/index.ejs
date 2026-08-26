@@ -9,6 +9,13 @@
 <body>
     <h1>My Job Application</h1>
 
+    <div>
+        Filter:
+        <a href="/">All</a>|
+        <a href="/?status=applied">Applied</a>|
+        <a href="/?status=interview">Interview</a>|
+        <a href="/?status=rejected">Rejected</a>
+    </div>
     <ul>
         <% for(let job of jobs){ %>
             <li>
