@@ -9,7 +9,7 @@
 - [x] Add delete button per job
 - [x] Add edit page
 - [x] Filter jobs by status via query string
-- [ ] Basic validation on form
+- [x] Basic validation on form
 
 ## Later (REST/SQL)
 - [ ] Refactor routes to proper REST conventions

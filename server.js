@@ -13,6 +13,13 @@ app.use(express.urlencoded({ extended: true}));
 app.post('/jobs',(req,res)=>{
     const data= JSON.parse(fs.readFileSync('./data.json','utf-8'));
 
+    const company= req.body.company.trim();
+    const role= req.body.role.trim();
+
+    if(!company || !role){
+        return res.status(400).send(`ERROR 400 (company and role are required)`);
+    }
+
     const newJob = {
         id: Date.now(),
         company: req.body.company,
