@@ -23,6 +23,12 @@
       "company": "newCompany",
       "role": "manager",
       "status": "interview"
+    },
+    {
+      "id": 1788372029743,
+      "company": "Samsung",
+      "role": "HR",
+      "status": "applied"
     }
   ]
 }

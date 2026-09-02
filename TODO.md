@@ -10,6 +10,7 @@
 - [x] Add edit page
 - [x] Filter jobs by status via query string
 - [x] Basic validation on form
+- [x] improve UI styling and status badges
 
 ## Later (REST/SQL)
 - [ ] Refactor routes to proper REST conventions

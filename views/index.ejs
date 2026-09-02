@@ -4,47 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>My Job Application</h1>
+    <h1>My Job Applications</h1>
 
-    <div>
+    <div class="filters">
         Filter:
-        <a href="/">All</a>|
-        <a href="/?status=applied">Applied</a>|
-        <a href="/?status=interview">Interview</a>|
+        <a href="/">All</a> |
+        <a href="/?status=applied">Applied</a> |
+        <a href="/?status=interview">Interview</a> |
         <a href="/?status=rejected">Rejected</a>
     </div>
+
     <ul>
         <% for(let job of jobs){ %>
             <li>
-                <%=job.company %> - <%=job.role %> (<%=job.status %>)
-                <form method="post" action="/jobs/<%= job.id%>/delete" style="display: inline;";>
-                    <button type="submit">Delete</button>
-                </form>
-
-                <a href="/jobs/<%=job.id%>/edit">Edit</a>
+                <div class="job-info">
+                    <strong><%= job.company %></strong> — <%= job.role %>
+                    <span class="status status-<%= job.status %>"><%= job.status %></span>
+                </div>
+                <div class="job-actions">
+                    <a class="btn btn-edit" href="/jobs/<%= job.id %>/edit">Edit</a>
+                    <form method="post" action="/jobs/<%= job.id %>/delete" style="display: inline;">
+                        <button class="btn-delete" type="submit">Delete</button>
+                    </form>
+                </div>
             </li>
         <% } %>
     </ul>
 
-    <!--New Job Form-->
-    <form method="post" action="/jobs">
-
+    <h2>Add New Job</h2>
+    <form class="new-job" method="post" action="/jobs">
         <input type="text" name="company" placeholder="Company" required>
-
         <input type="text" name="role" placeholder="Role" required>
-
         <select name="status">
             <option value="applied">Applied</option>
             <option value="interview">Interview</option>
             <option value="rejected">Rejected</option>
         </select>
-
         <button type="submit">Add Job</button>
-        
     </form>
-    
 </body>
 </html>
